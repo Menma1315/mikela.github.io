@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elige la Puerta Correcta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fceabb;
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff7eb9, #ff65a3);
+            text-align: center;
+            padding: 50px 0;
+            color: #fff;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .subheading {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+
+        .doors-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .door {
+            width: 150px;
+            height: 250px;
+            background-color: #d3d3d3;
+            border: 2px solid #333;
+            margin: 0 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            transition: background-color 0.3s;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .door:hover {
+            background-color: #ff65a3; /* Color rosa al pasar el ratón */
+        }
+
+        #message {
+            display: none;
+            font-size: 2rem;
+            color: red;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+
+        #correct-message {
+            display: none;
+            font-size: 2rem;
+            color: green;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+
+        /* Fondo para la imagen de la puerta incorrecta */
+        #incorrect-door {
+            background-image: url('imagen_2025-03-30_150145575-removebg-preview (1).png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Fondo para la imagen de la puerta correcta */
+        #correct-door {
+            background-image: url('imagen_2025-03-30_150145575-removebg-preview (1).png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gojo-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .gojo-image {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none; /* La imagen de Gojo está oculta por defecto */
+        }
+
+        .buttons-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .buttons-container button {
+            background-color: #ff65a3;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 25px;
+            margin: 10px;
+            transition: 0.3s ease;
+        }
+
+        .buttons-container button:hover {
+            background-color: #ff7eb9;
+        }
+
+        footer {
+            background-color: #ff7eb9;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>¡Elige la puerta correcta!</h1>
+        <p class="subheading">¡Haz tu elección sabiamente!</p>
+    </header>
+
+    <!-- Contenedor de las 2 puertas -->
+    <div class="doors-container">
+        <!-- Puerta 1 (incorrecta) -->
+        <div class="door" id="incorrect-door" onclick="chooseDoor('incorrecta')">Puerta 1</div>
+
+        <!-- Puerta 2 (correcta) -->
+        <div class="door" id="correct-door" onclick="chooseDoor('correcta')">Puerta 2</div>
+    </div>
+
+    <!-- Mensajes -->
+    <div id="message">¡Uy! Te tragaste el sobaco de Richardy, ¡Corre a la otra puerta RAPIDO!!!</div>
+    <div id="correct-message">
+        ¡Ay caray! Gojo te invitó a una cena romántica y te salvo de richardy:)!
+    </div>
+    
+    <!-- Imagen de Gojo debajo del mensaje, oculta por defecto -->
+    <div class="gojo-container">
+        <img class="gojo-image" id="gojo-image" src="gojo.jpg" alt="Gojo">
+    </div>
+
+    <!-- Botón de siguiente, oculto por defecto -->
+    <div class="buttons-container" id="next-button" style="display: none;">
+        <button onclick="window.location.href='file:///C:/Users/LCS/Desktop/feliz%20cumple/pagina%203.html'">Siguiente</button>
+    </div>
+
+    <div class="buttons-container">
+        <!-- Actualizado para que apunte a la página principal local -->
+        <button onclick="window.location.href='file:///C:/Users/LCS/Desktop/feliz%20cumple/pagina%20principal.html'">Volver a la Página Principal</button>
+    </div>
+
+    <footer>
+        <p>Gracias por ser tan increíble. ¡Espero que te haya gustado!</p>
+    </footer>
+
+    <script>
+        // Función que maneja la selección de las puertas
+        function chooseDoor(door) {
+            if (door === 'incorrecta') {
+                // Mostrar el mensaje de muerte
+                document.getElementById('message').style.display = 'block';
+                // Ocultar el mensaje de éxito
+                document.getElementById('correct-message').style.display = 'none';
+                // Ocultar la imagen de Gojo
+                document.getElementById('gojo-image').style.display = 'none';
+                // Ocultar el botón "Siguiente"
+                document.getElementById('next-button').style.display = 'none';
+            } else if (door === 'correcta') {
+                // Mostrar el mensaje de éxito
+                document.getElementById('correct-message').style.display = 'block';
+                // Ocultar el mensaje de muerte
+                document.getElementById('message').style.display = 'none';
+                // Mostrar la imagen de Gojo
+                document.getElementById('gojo-image').style.display = 'block';
+                // Mostrar el botón "Siguiente"
+                document.getElementById('next-button').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>

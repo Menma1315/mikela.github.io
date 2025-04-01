@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias de parte de Gojo!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fceabb;
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff7eb9, #ff65a3);
+            text-align: center;
+            padding: 50px 0;
+            color: #fff;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .subheading {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+
+        .message-container {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        .video-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .buttons-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .buttons-container button {
+            background-color: #ff65a3;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 25px;
+            margin: 10px;
+            transition: 0.3s ease;
+        }
+
+        .buttons-container button:hover {
+            background-color: #ff7eb9;
+        }
+
+        footer {
+            background-color: #ff7eb9;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>¡Gracias por participar!</h1>
+        <p class="subheading">¡Nos vemos en la próxima!</p>
+    </header>
+
+    <div class="message-container">
+        <p>De parte de tu querido Gojo 😎</p>
+    </div>
+
+    <div class="video-container">
+        <!-- Aquí iría el video una vez que me lo pases -->
+        <video width="80%" controls>
+            <source src="ruta_del_video.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+
+    <div class="buttons-container">
+        <!-- Botón de Página Anterior -->
+        <button onclick="window.location.href='file:///C:/Users/LCS/Desktop/feliz%20cumple/pagina%203.html'">Volver a la Página Anterior</button>
+        
+        <!-- Botón de Siguiente -->
+        <button onclick="window.location.href='file:///C:/Users/LCS/Desktop/feliz%20cumple/pagina%20principal.html'">Volver a la Página Principal</button>
+    </div>
+
+    <footer>
+        <p>Gracias por ser tan increíble. ¡Espero que te haya gustado!</p>
+    </footer>
+
+</body>
+</html>
